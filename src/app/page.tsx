@@ -1,7 +1,19 @@
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
 
-async function getCryptoData() {
+interface Crypto {
+  id: string;
+  name: string;
+  image: string;
+  current_price: number;
+  market_cap: number;
+  price_change_percentage_24h: number;
+}
+async function getCryptoData(): Promise<Crypto[]> {
   const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
   return res.json();
 }
 
