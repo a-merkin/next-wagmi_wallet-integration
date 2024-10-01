@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Profile } from './components/Profile';
+import { WalletOptions } from './components/WalletOptions';
 
 interface Crypto {
   id: string;
@@ -24,7 +25,12 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <Profile></Profile>
+      <div className="flex justify-between">
+        <Profile />
+        <div className="flex gap-3">
+          <WalletOptions />
+        </div>
+      </div>
       <h1 className="text-3xl font-bold text-center mb-6">Cryptocurrency Prices</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cryptos.map((crypto: Crypto) => (
