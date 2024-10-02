@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Profile } from './components/Profile';
-import { WalletOptions } from './components/WalletOptions';
+import { ConnectWallet } from './components/ConnectWallet';
 
 interface Crypto {
   id: string;
@@ -20,15 +19,15 @@ async function getCryptoData(): Promise<Crypto[]> {
   return res.json();
 }
 
+
 export default async function Home() {
   const cryptos = await getCryptoData();
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <div className="flex justify-between">
-        <Profile />
+      <div className="flex justify-end">
         <div className="flex gap-3">
-          <WalletOptions />
+          <ConnectWallet />
         </div>
       </div>
       <h1 className="text-3xl font-bold text-center mb-6">Cryptocurrency Prices</h1>
