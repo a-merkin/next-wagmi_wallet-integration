@@ -3,7 +3,7 @@
 import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi'
 
 export function Profile() {
-  const { address } = useAccount()
+  const { address, } = useAccount()
   const { disconnect } = useDisconnect()
   const { data: ensName } = useEnsName({ address })
   const { data: ensAvatar } = useEnsAvatar({ name: ensName! })

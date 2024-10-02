@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ConnectWallet } from './components/ConnectWallet';
+import { NetworkSwitcher } from './components/NetworkSwitcher';
 
 interface Crypto {
   id: string;
@@ -25,7 +26,8 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <div className="flex justify-end">
+      <div className="flex justify-between">
+        <NetworkSwitcher />
         <div className="flex gap-3">
           <ConnectWallet />
         </div>
