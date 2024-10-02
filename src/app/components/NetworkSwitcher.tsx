@@ -28,11 +28,9 @@ export function NetworkSwitcher() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // После первой загрузки на клиенте меняем состояние
     setIsMounted(true);
   }, []);
 
-  // Если компонент не смонтирован на клиенте, показываем заглушку
   if (!isMounted) {
     return <p>Загрузка...</p>;
   }
