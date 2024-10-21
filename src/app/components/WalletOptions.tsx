@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from 'react';
-import { Connector, useConnect } from 'wagmi';
+import { useConnect } from 'wagmi';
 
 export function WalletOptions() {
   const { connectors, connect } = useConnect();
